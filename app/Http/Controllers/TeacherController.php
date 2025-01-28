@@ -35,7 +35,9 @@ class TeacherController extends Controller
             'name' => $request->name,
             'tp' => $request->tp,
         ]);
-        return $teacher;
+        // return $teacher;
+        return redirect()->back()->with('obj',$teacher);
+
 
     }
 

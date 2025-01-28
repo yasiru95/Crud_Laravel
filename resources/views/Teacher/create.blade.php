@@ -14,6 +14,13 @@
             <h2 class="text-center mb-4">Register</h2>
             <form action="{{ route('teacher.store') }}" method="POST">
                 @csrf
+                @if (session('obj'))                
+                <div class="alert alert-success" role="alert">
+                    <p>Created</p>
+                    {{-- <br>
+                    {{session('obj')}} --}}
+                </div>
+                @endif
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
